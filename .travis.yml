@@ -7,16 +7,16 @@ before_install:
   - docker build -t jrudd/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true USERNAME/docker-react npm run test
+  - docker run -e CI=true jrudd1/docker-react npm run test
 
 
 deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
-  app: "docker-react1"
-  env: "dockerreact1-env"
+  app: "docker-react"
+  env: "Dockerreact-env"
   bucket_name: "elasticbeanstalk-us-east-2-670901130033"
-  bucket_path: "docker-react1"
+  bucket_path: "docker-react"
   on:
     branch: main
 
